@@ -18,14 +18,11 @@ const getValues = (length) => {
 const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify(
-        Array(dataLength).fill(
-            {
-                name: null,
+        Array(dataLength).fill().map((item, index) => {
+            return {
+                name: `line-${index + 1}`,
                 values: getValues(length)
-            }
-        ).map((item, index) => {
-            item.name = `line-${index}`;
-            return item;
+            };
         })
     ));
     res.end();
