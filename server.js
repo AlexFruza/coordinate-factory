@@ -2,7 +2,7 @@ const http = require('http');
 
 
 const port = process.env.PORT || 3002;
-const length = 1000;
+const length = 100;
 const dataLength = 5;
 const startDate = new Date('2012-01-01 00:00:00');
 
