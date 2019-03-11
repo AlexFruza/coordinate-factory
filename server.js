@@ -16,6 +16,8 @@ const getValues = (length) => {
 };
 
 const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify(
         Array(dataLength).fill().map((item, index) => {
